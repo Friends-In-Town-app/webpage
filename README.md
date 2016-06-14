@@ -1,6 +1,10 @@
-# webpage
+# WebApp
 
 > WebApp for the Friends-in-town project
+
+## Goals
+
+## Technologies
 
 ## Build Setup
 
