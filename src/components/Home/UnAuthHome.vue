@@ -2,14 +2,14 @@
   <nav class="light-blue lighten-1" role="navigation">
     <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">Logo</a>
       <ul class="right hide-on-med-and-down">
-        <li><a class="modal-trigger" href="#">Sign in</a></li>
-        <li><a class="modal-trigger" href="#signup-modal">Sign up</a></li>
+        <li><a class="modal-trigger" href="#signin-modal">Sign in</a></li>
+        <li><a href="#signup">Sign up</a></li>
         <li><a class="modal-trigger" href="#">About us</a></li>
       </ul>
 
       <ul id="nav-mobile" class="side-nav">
         <li><a class="modal-trigger" href="#">Sign in</a></li>
-        <li><a class="modal-trigger" href="#signup-modal">Sign up</a></li>
+        <li><a href="#signup">Sign up</a></li>
         <li><a class="modal-trigger" href="#">About us</a></li>
       </ul>
       <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
@@ -31,13 +31,13 @@
   </div>
 
   <!-- Modal Structure -->
-  <div id="signup-modal" class="modal modal-fixed-footer">
+  <div id="signin-modal" class="modal modal-fixed-footer">
     <div class="modal-content">
       <h4>Modal Header</h4>
       <p>A bunch of text</p>
     </div>
     <div class="modal-footer">
-      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Agree</a>
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Sign up</a>
     </div>
   </div>
 
@@ -78,7 +78,7 @@
     <br><br>
     
     <!-- Create New account section -->
-    <div class="section">
+    <div class="section" id="signup">
       <h2 class="header center orange-text">Sign Up</h1>
       <br><br>
 
