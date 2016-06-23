@@ -20,6 +20,7 @@
     "bower": "^1.7.9",
     "vue": "^1.0.0",
     "vue-hot-reload-api": "^2.0.0",
+    "vue-resource": "^0.8.0",
     "vue-router": "^0.7.13"
   },
   "devDependencies": {

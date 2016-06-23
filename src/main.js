@@ -2,15 +2,24 @@ import Vue from 'vue'
 import App from './App.vue'
 
 import Router from 'vue-router'
+import VueResource from 'vue-resource'
 
-// Install router
+// Install router and resource
 Vue.use(Router)
+Vue.use(VueResource)
 
 // Routing
-var router = new Router()
+const router = new Router()
 
-/* eslint-disable no-new */
-new Vue({
-  el: 'body',
-  components: { App }
+router.map({
+  '/': {
+    component: App
+  }
 })
+
+// Any invalid route will redirect to home
+router.redirect({
+  '*': '/'
+})
+
+router.start(App, '#app')
