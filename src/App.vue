@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <un-auth-home></un-auth-home>
+  	<auth-home></auth-home>
   </div>
 </template>
 
@@ -15,4 +15,5 @@ export default {
     AuthHome
   }
 }
+
 </script>
