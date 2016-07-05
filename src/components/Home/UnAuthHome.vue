@@ -115,30 +115,30 @@
               </div>
               <div class="row">
                   <div class="col s12 input-field">
-                      <input id="new-your-name" name="new-your-name" type="text">
+                      <input id="new-your-name" name="new-your-name" type="text" v-model="signup.name">
                       <label for="new-your-name">Your name</label>
                   </div>
                 </div>
                 <div class="row">
                   <div class="col s12 input-field">
-                      <input id="new-your-email" name="new-your-email" type="email">
+                      <input id="new-your-email" name="new-your-email" type="email" v-model="signup.email">
                       <label for="new-your-email">E-mail address</label>
                   </div>
                 </div>
                 <div class="row">
                   <div class="col s12 input-field">
-                      <input id="new-your-password" name="new-your-password" type="password">
+                      <input id="new-your-password" name="new-your-password" type="password" v-model="signup.password">
                       <label for="new-your-password">Password</label>
                   </div>
                 </div>
                 <div class="row">
                   <div class="col s12 input-field">
-                      <input id="password-confirmation" name="password-confirmation" type="password">
+                      <input id="password-confirmation" name="password-confirmation" type="password" v-model="signup.repassword">
                       <label for="password-confirmation">Re-Password</label>
                   </div>
                 </div>
                 <div class="row center">
-                  <button class="btn blue" id="create-account-and-list">Create Account</button>
+                  <button class="btn blue" id="create-account-and-list" v-on:click="submitSignUp">Create Account</button>
                   <p id="create-account-and-list-message" class="materialize-red-text lighten-2"></p>
                 </div>
               </div>
@@ -199,9 +199,20 @@
         signin: {
           "email":"",
           "password":""
+        },
+        signup: {
+          "name":"",
+          "email":"",
+          "password":"",
+          "repassword":""
         }
       }
     }, 
+
+    /**
+      * Method called to log in a user in the app.
+      * Event trigger: Click in Login button.
+      */
     methods: {
       submitAuth : function(event) {
         this.$http.get('http://64.137.233.224:3000/loginemail/' 
@@ -214,8 +225,25 @@
           // Error callback
           alert('Ops, something wrong is not right!');
         });
+      },
+
+      /**
+       * Method called to create a new user in the app.
+       * Event trigger: Click in the "CREATE ACCOUNT" button.
+       */
+      submitSignUp : function(event) {
+        //@TODO: Add method to see if password == repassword and hash
+        // the password
+        this.$http.post('http://64.137.233.224:3000/createaccountemail/'
+          + this.signup.email + '/'
+          + this.signup.password + '/'
+          +this.signup.name).then((response) => {
+            // Success callback
+            alert('Success creating new account');
+          }, (response) => {
+            alert('Ops, something wrong is not right!');
+          });
       }
     }
   }
-
 </script>]
