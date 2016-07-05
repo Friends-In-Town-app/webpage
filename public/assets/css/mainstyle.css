@@ -29,3 +29,8 @@
   background: #ffffff;
   padding: 0px 10px; 
 }
+
+.fb-login-button {
+  text-align:center;
+  margin:auto;
+}

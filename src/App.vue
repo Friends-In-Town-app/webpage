@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-  	<auth-home></auth-home>
+  	<un-auth-home></un-auth-home>
   </div>
 </template>
 

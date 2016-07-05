@@ -36,18 +36,18 @@
       <div class="container">
         <div class="row">  
           <div class="col s12 input-field">
-            <input id="new-your-email" name="new-your-email" type="email" v-model="signin.email">
-            <label for="new-your-email">E-mail address</label>
+            <input id="signin-email" name="signin-email" type="email" v-model="signin.email">
+            <label for="signin-email">E-mail address</label>
           </div>
         </div>
         <div class="row">
           <div class="col s12 input-field">
-            <input id="new-your-password" name="new-your-password" type="password" v-model="signin.password">
-            <label for="new-your-password">Password</label>
+            <input id="signin-password" name="signin-password" type="password" v-model="signin.password">
+            <label for="signin-password">Password</label>
           </div>
         </div>
         <h5 class="center light-blue-text"> Or </h5>
-        <div class="center fb-login-button" data-max-rows="1" data-size="xlarge" data-show-faces="true" data-auto-logout-link="false"></div>
+        <div class="fb-login-button" data-max-rows="1" data-size="xlarge" data-show-faces="true" data-auto-logout-link="false"></div>
       </div>
     </div>
     <div class="modal-footer">
@@ -138,7 +138,7 @@
                   </div>
                 </div>
                 <div class="row center">
-                  <button class="btn" id="create-account-and-list">Create Account</button>
+                  <button class="btn blue" id="create-account-and-list">Create Account</button>
                   <p id="create-account-and-list-message" class="materialize-red-text lighten-2"></p>
                 </div>
               </div>
@@ -192,4 +192,30 @@
 
 <script>
   import {router} from '../../main'
-</script>
+
+  export default {
+    data () {
+      return {
+        signin: {
+          "email":"",
+          "password":""
+        }
+      }
+    }, 
+    methods: {
+      submitAuth : function(event) {
+        this.$http.get('http://64.137.233.224:3000/loginemail/' 
+          + this.signin.email + '/' 
+          + this.signin.password + '/webapp').then((response) => {
+            // Success callback
+            alert('User logged in!');
+            console.log(response);
+          }, (response) => {
+          // Error callback
+          alert('Ops, something wrong is not right!');
+        });
+      }
+    }
+  }
+
+</script>]
