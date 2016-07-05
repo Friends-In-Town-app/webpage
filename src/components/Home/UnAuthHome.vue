@@ -193,6 +193,8 @@
 <script>
   import {router} from '../../main'
 
+  const API_ADDRESS = 'http://64.137.233.224:3000/';
+
   export default {
     data () {
       return {
@@ -205,6 +207,11 @@
           "email":"",
           "password":"",
           "repassword":""
+        },
+        user: {
+          "token": "",
+          "pos": [],
+          "name": ""
         }
       }
     }, 
@@ -215,14 +222,27 @@
       */
     methods: {
       submitAuth : function(event) {
-        this.$http.get('http://64.137.233.224:3000/loginemail/' 
+        this.$http.get(API_ADDRESS + 'loginemail/' 
           + this.signin.email + '/' 
           + this.signin.password + '/webapp').then((response) => {
-            // Success callback
-            alert('User logged in!');
-            console.log(response);
+            // 200 RESPONSE
+
+            if(response.data.success){
+              // Save user data
+              this.user.token = response.data.user.token;
+              this.user.name = response.data.user.n;
+              this.user.pos = response.data.user.pos;              
+
+            } else {
+              // Throw an error in the HTML element
+              alert(response.data.msg);
+            }
+            
+            // Reset the signin form
+            this.resetSignIn();
+
           }, (response) => {
-          // Error callback
+          // Redirect to error message/page
           alert('Ops, something wrong is not right!');
         });
       },
@@ -234,15 +254,43 @@
       submitSignUp : function(event) {
         //@TODO: Add method to see if password == repassword and hash
         // the password
-        this.$http.post('http://64.137.233.224:3000/createaccountemail/'
-          + this.signup.email + '/'
-          + this.signup.password + '/'
-          +this.signup.name).then((response) => {
-            // Success callback
-            alert('Success creating new account');
-          }, (response) => {
-            alert('Ops, something wrong is not right!');
-          });
+        if(this.signup.password != '' && this.signup.password == this.signup.repassword){
+          this.$http.post(API_ADDRESS + 'createaccountemail/'
+            + this.signup.email + '/'
+            + this.signup.password + '/'
+            + this.signup.name).then((response) => {
+              // Success callback
+              if(response.data.sucess){
+                alert('Success creating new account');  
+              } else {
+                alert(response.data.msg);
+              }
+
+              // Reset signup form
+              this.resetSignUp(); 
+
+            }, (response) => {
+              alert('Ops, something wrong is not right!');
+            });
+        } else {
+          // ERROR in the password field
+        }
+      },
+
+      resetSignIn: function(){
+        this.signin = {
+          "email":"",
+          "password":""
+        };
+      },
+
+      resetSignUp: function(){
+        this.signup = {
+          "name":"",
+          "email":"",
+          "password":"",
+          "repassword":""
+        };
       }
     }
   }
