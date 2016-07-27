@@ -7,18 +7,19 @@ var GOOGLEAPIVERSION = '3.24';
 (function($){
   $(function(){
 
-    $('.button-collapse').sideNav({
-    	menuWidth: 300, // Default is 240
-    	edge: 'left', // Choose the horizontal origin
-    	closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
-    });
-
     // Modal settings of unauthhome
 	$(document).ready(function(){
     	// the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
     	$('.modal-trigger').leanModal();
     	// Dropdown
     	$(".dropdown-button").dropdown();
+
+    	// Side-Nav
+    	$('.button-collapse').sideNav({
+    		menuWidth: 300, // Default is 240
+    		edge: 'right', // Choose the horizontal origin
+    		closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
+    	});
 
 	});
 

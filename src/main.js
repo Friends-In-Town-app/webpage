@@ -4,22 +4,22 @@ import App from './App.vue'
 import Router from 'vue-router'
 import VueResource from 'vue-resource'
 
-import UnAuthHome from './components/Home/UnAuthHome.vue'
-import AuthHome from './components/Home/AuthHome.vue'
-import Error505 from './components/Handler/Error505.vue'
+import UnAuthHome from './components/home/UnAuthHome.vue'
+import AuthHome from './components/userHome/AuthHome.vue'
+import Error505 from './components/handler/Error505.vue'
 
 // Install router and resource
 Vue.use(Router)
 Vue.use(VueResource)
 
 // Routing
-const router = new Router({
+var router = new Router({
 	history: true
 });
 
 router.map({
   '/': {
-    component: UnAuthHome
+    component: AuthHome
   },
   '/home':{
   	component: AuthHome
@@ -27,11 +27,6 @@ router.map({
   '/error':{
   	component: Error505
   }
-})
-
-// Any invalid route will redirect to home
-router.redirect({
-  '*': '/'
 })
 
 router.start(App, '#app')
