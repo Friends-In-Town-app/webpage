@@ -1,12 +1,25 @@
+// Javascript Constants
+var FBKEY = '291979681134911';
+var GOOGLEKEY = 'AIzaSyABcYOCvykYyyPHmQf4-J-XGMHfCPkGX2I';
+var GOOGLEAPIVERSION = '3.24';
+
+// Jquery Loads
 (function($){
   $(function(){
 
-    $('.button-collapse').sideNav();
+    $('.button-collapse').sideNav({
+    	menuWidth: 300, // Default is 240
+    	edge: 'left', // Choose the horizontal origin
+    	closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
+    });
 
     // Modal settings of unauthhome
 	$(document).ready(function(){
     	// the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
     	$('.modal-trigger').leanModal();
+    	// Dropdown
+    	$(".dropdown-button").dropdown();
+
 	});
 
   }); // end of document ready
@@ -14,7 +27,7 @@
 
 window.fbAsyncInit = function() {
 	FB.init({
-		appId      : '291979681134911',
+		appId      : FBKEY,
 		xfbml      : true,
 		version    : 'v2.6'
 	});

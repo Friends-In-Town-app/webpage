@@ -4,16 +4,28 @@ import App from './App.vue'
 import Router from 'vue-router'
 import VueResource from 'vue-resource'
 
+import UnAuthHome from './components/Home/UnAuthHome.vue'
+import AuthHome from './components/Home/AuthHome.vue'
+import Error505 from './components/Handler/Error505.vue'
+
 // Install router and resource
 Vue.use(Router)
 Vue.use(VueResource)
 
 // Routing
-const router = new Router()
+const router = new Router({
+	history: true
+});
 
 router.map({
   '/': {
-    component: App
+    component: UnAuthHome
+  },
+  '/home':{
+  	component: AuthHome
+  },
+  '/error':{
+  	component: Error505
   }
 })
 

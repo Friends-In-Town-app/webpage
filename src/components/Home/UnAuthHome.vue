@@ -192,7 +192,6 @@
 
 <script>
   import {router} from '../../main'
-
   const API_ADDRESS = 'http://64.137.233.224:3000/';
 
   export default {
@@ -222,20 +221,21 @@
       */
     methods: {
       submitAuth : function(event) {
-        this.$http.get(API_ADDRESS + 'loginemail/' 
+        this.$http.post(API_ADDRESS + 'loginemail/' 
           + this.signin.email + '/' 
           + this.signin.password + '/webapp').then((response) => {
             // 200 RESPONSE
-
+            console.log("200 TIMEOUT");
             if(response.data.success){
               // Save user data
               this.user.token = response.data.user.token;
               this.user.name = response.data.user.n;
-              this.user.pos = response.data.user.pos;              
+              this.user.pos = response.data.user.pos;
+              router.go('/home');
 
             } else {
               // Throw an error in the HTML element
-              alert(response.data.msg);
+              Materialize.toast(response.data.msg, 3000, 'rounded');
             }
             
             // Reset the signin form
@@ -243,7 +243,8 @@
 
           }, (response) => {
           // Redirect to error message/page
-          alert('Ops, something wrong is not right!');
+          console.log("!= 200 TIMEOUT: " + response);
+          router.go('/error');
         });
       },
 
