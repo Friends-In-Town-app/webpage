@@ -191,7 +191,6 @@
 </template>
 
 <script>
-  import {router} from '../../main'
   const API_ADDRESS = 'http://64.137.233.224:3000/';
 
   export default {
@@ -231,7 +230,7 @@
               this.user.token = response.data.user.token;
               this.user.name = response.data.user.n;
               this.user.pos = response.data.user.pos;
-              router.go('/home');
+              this.$route.router.go('/home');
 
             } else {
               // Throw an error in the HTML element
@@ -244,7 +243,7 @@
           }, (response) => {
           // Redirect to error message/page
           console.log("!= 200 TIMEOUT: " + response);
-          router.go('/error');
+          this.$route.router.go('/error');
         });
       },
 

@@ -10,17 +10,17 @@
     <div class="nav-wrapper">
      <ul id="nav-mobile" class="left hide-on-med-and-down">
         <li>
-          <a href="#">
+          <a href="#" v-link="{ path: 'home' }">
             <i class="material-icons left">location_on</i> Map
           </a>
         </li>
         <li>
-          <a href="#">
+          <a href="#" v-link="{ path: 'search' }">
           <i class="material-icons left">search</i> Search
           </a>
         </li>
         <li>
-          <a href="#">
+          <a href="#" v-link="{ path: 'notifications' }">
             <i class="material-icons left">stars</i> Notifications
           </a>
         </li>
@@ -71,7 +71,7 @@
 </ul>
 
 <!-- FAB -->
-<div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
+<div class="fixed-action-btn" style="bottom: 45px; right: 30px;">
   <a  href="#" data-activates="slide-out" class="button-collapse btn-floating btn-large orange" v-on:click="showFriendsList">
     <i class="material-icons">group</i>
   </a>

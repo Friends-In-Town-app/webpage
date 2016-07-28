@@ -16,7 +16,7 @@ import Search from './components/search/Search.vue'
 let VueRouter = require('vue-router')
 
 let App = Vue.extend({
-  components:{Error505, AuthHome, UnAuthHome}
+  components:{Error505, AuthHome, UnAuthHome, Search}
 });
 
 // Install router and resource
@@ -30,11 +30,11 @@ var router = new VueRouter({
 
 router.map({
   '/home': {
-    component: UnAuthHome,
+    component: AuthHome,
     name: 'root'
   },
   '/':{
-  	component: AuthHome,
+  	component: UnAuthHome,
     name: 'home'
   },
   '/error':{
