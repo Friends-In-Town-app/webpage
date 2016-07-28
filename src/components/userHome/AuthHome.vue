@@ -56,15 +56,15 @@
 <ul id="slide-out" class="side-nav">
   <li><div class="userView">
     <img class="background" src="src/assets/imgs/map_background.jpg">
-    <a href="#!user"><img class="circle" v-bind="{src:user.profile_pic}"></a>
-    <a href="#!name"><span class="fwhite-text name">{{user.name}}</span></a>
-    <a href="#!email"><span class="white-text email">{{user.email}}</span></a>
+    <img class="circle" v-bind="{src:user.profile_pic}">
+    <span class="fwhite-text name">{{user.name}}</span>
+    <span class="white-text email">{{user.email}}</span>
   </div></li>
-  <li><a><i class="material-icons">group</i>Your Friends</a></li>
+  <li><i class="material-icons">group</i>Your Friends</li>
   <li><div class="divider"></div></li>
   <li v-for="friend in user_friends">
     <a class="waves-effect" href="#!">
-      <img class="circle" v-bind="{src:friend.profile_pic}">
+      <img style="vertical-align:middle" class="circle" v-bind="{src:friend.profile_pic}">
       <span class="fwhite-text name">{{friend.name}}</span>
     </a>
   </li>
@@ -128,6 +128,7 @@ export default {
     }, 
     getFriendsList : function(event){
       this.user_friends = [{ 
+<<<<<<< HEAD
           "name": "John Snow",
           "profile_pic":"src/assets/imgs/hguimaraes.jpg",
           "pos":""
@@ -135,10 +136,20 @@ export default {
         { 
           "name": "Captain America",
           "profile_pic":"src/assets/imgs/hguimaraes.jpg",
+=======
+          "name": "El Diablo",
+          "profile_pic":"/assets/imgs/eldiablo.jpg",
+          "pos":""
+        },
+        { 
+          "name": "DeadShot",
+          "profile_pic":"/assets/imgs/deadshot.jpg",
+>>>>>>> 22e7576e7283bea99da0a94719b296e51cc1dbbd
           "pos":""
         },
         { 
           "name": "Joker",
+<<<<<<< HEAD
           "profile_pic":"src/assets/imgs/hguimaraes.jpg",
           "pos":""
         },
@@ -150,6 +161,19 @@ export default {
         { 
           "name": "Arlequin",
           "profile_pic":"src/assets/imgs/hguimaraes.jpg",
+=======
+          "profile_pic":"/assets/imgs/joker.jpg",
+          "pos":""
+        },
+        { 
+          "name": "Bruce Wayne",
+          "profile_pic":"/assets/imgs/brucewayne.jpg",
+          "pos":""
+        },
+        { 
+          "name": "Harley Quinn",
+          "profile_pic":"/assets/imgs/harleyquinn.jpg",
+>>>>>>> 22e7576e7283bea99da0a94719b296e51cc1dbbd
           "pos":""
         }];
     }
