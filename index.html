@@ -6,9 +6,8 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Friends in Town</title>
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-		<link rel="stylesheet" href="assets/libs/font-awesome/css/font-awesome.min.css">
-		<link rel="stylesheet" href="assets/libs/Materialize/dist/css/materialize.css" media="screen,projection">
-		<link rel="stylesheet" href="assets/css/mainstyle.css" media="screen,projection">
+		<link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
+		<link rel="stylesheet" href="bower_components/Materialize/dist/css/materialize.css" media="screen,projection">
 
 	<!--[if lt IE 9]>
 		<script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -20,13 +19,12 @@
 		<div id="fb-root"></div>
 		<!-- Vue component --> 
 		<div id="app">
-			<app></app>
+			<router-view></router-view>
 		</div>
 
 		<!-- Javascript imports -->
-		<script src="assets/libs/jquery/dist/jquery.min.js"></script>
-		<script src="assets/libs/Materialize/dist/js/materialize.js"></script>
-		<script src="assets/js/mainjs.js"></script>
+		<script src="bower_components/jquery/dist/jquery.min.js"></script>
+		<script src="bower_components/Materialize/dist/js/materialize.js"></script>
 		<script src="dist/build.js"></script>
 	</body>
 </html>

@@ -55,7 +55,7 @@
 <!-- Friends List -->
 <ul id="slide-out" class="side-nav">
   <li><div class="userView">
-    <img class="background" src="/assets/imgs/map_background.jpg">
+    <img class="background" src="src/assets/imgs/map_background.jpg">
     <img class="circle" v-bind="{src:user.profile_pic}">
     <span class="fwhite-text name">{{user.name}}</span>
     <span class="white-text email">{{user.email}}</span>
@@ -79,10 +79,10 @@
 </template>
 
 <script>
-
+import Auth from '../../assets/js/mainjs.js'
 import {load, Marker, Map} from 'vue-google-maps'
 
-load(GOOGLEKEY, GOOGLEAPIVERSION);
+load(Auth.GOOGLEKEY, Auth.GOOGLEAPIVERSION);
 export default {
 	/**
    *
@@ -102,7 +102,7 @@ export default {
         user: {
           "name": "Heitor Guimarães",
           "email" : "hguimaraes.poli.ufrj",
-          "profile_pic":"/assets/imgs/hguimaraes.jpg",
+          "profile_pic":"src/assets/imgs/hguimaraes.jpg",
           "pos":""
         },
 
@@ -129,27 +129,27 @@ export default {
     getFriendsList : function(event){
       this.user_friends = [{ 
           "name": "El Diablo",
-          "profile_pic":"/assets/imgs/eldiablo.jpg",
+          "profile_pic":"src/assets/imgs/eldiablo.jpg",
           "pos":""
         },
         { 
           "name": "DeadShot",
-          "profile_pic":"/assets/imgs/deadshot.jpg",
+          "profile_pic":"src/assets/imgs/deadshot.jpg",
           "pos":""
         },
         { 
           "name": "Joker",
-          "profile_pic":"/assets/imgs/joker.jpg",
+          "profile_pic":"src/assets/imgs/joker.jpg",
           "pos":""
         },
         { 
           "name": "Bruce Wayne",
-          "profile_pic":"/assets/imgs/brucewayne.jpg",
+          "profile_pic":"src/assets/imgs/brucewayne.jpg",
           "pos":""
         },
         { 
           "name": "Harley Quinn",
-          "profile_pic":"/assets/imgs/harleyquinn.jpg",
+          "profile_pic":"src/assets/imgs/harleyquinn.jpg",
           "pos":""
         }];
     }
