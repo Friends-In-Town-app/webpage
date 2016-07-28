@@ -6,7 +6,6 @@
 
 <script>
 import Vue from 'vue'
-import Router from 'vue-router'
 import VueResource from 'vue-resource'
 
 import UnAuthHome from './components/home/UnAuthHome.vue'
@@ -14,25 +13,27 @@ import AuthHome from './components/userHome/AuthHome.vue'
 import Error505 from './components/handler/Error505.vue'
 import Search from './components/search/Search.vue'
 
-let App = {
-  components:{}
-}
+let VueRouter = require('vue-router')
+
+let App = Vue.extend({
+  components:{Error505, AuthHome, UnAuthHome}
+});
 
 // Install router and resource
-Vue.use(Router)
+Vue.use(VueRouter)
 Vue.use(VueResource)
 
 // Routing
-var router = new Router({
-	history: true
-});
+var router = new VueRouter({
+	// history: true
+})
 
 router.map({
-  '/': {
-    component: AuthHome,
+  '/home': {
+    component: UnAuthHome,
     name: 'root'
   },
-  '/home':{
+  '/':{
   	component: AuthHome,
     name: 'home'
   },
