@@ -12,6 +12,7 @@ import VueResource from 'vue-resource'
 import UnAuthHome from './components/home/UnAuthHome.vue'
 import AuthHome from './components/userHome/AuthHome.vue'
 import Error505 from './components/handler/Error505.vue'
+import Search from './components/search/Search.vue'
 
 let App = {
   components:{}
@@ -38,6 +39,10 @@ router.map({
   '/error':{
   	component: Error505,
     name: 'error'
+  },
+  '/search':{
+    component: Search,
+    name: 'search'
   }
 })
 

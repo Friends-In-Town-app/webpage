@@ -100,9 +100,9 @@ export default {
 
         // Mocked Data
         user: {
-          "name": "Heitor Guimarães",
-          "email" : "hguimaraes.poli.ufrj",
-          "profile_pic":"src/assets/imgs/hguimaraes.jpg",
+          "name": "Clark Kent",
+          "email" : "clark.kent@dailyplanet.org",
+          "profile_pic":"src/assets/imgs/clarkkent.jpg",
           "pos":""
         },
 
