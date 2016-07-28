@@ -226,7 +226,7 @@
             // 200 RESPONSE
             if(response.data.success){
               // Save user data
-              this.user.token = response.data.user.token;
+              this.user.token = response.data.token;
               this.user.name = response.data.user.n;
               this.user.pos = response.data.user.pos;
 
@@ -234,7 +234,6 @@
               localStorage.setItem('user_token', this.user.token);
               localStorage.setItem('user_name', this.user.n);
               localStorage.setItem('user_pos', this.user.pos);
-
               this.$route.router.go('/home');
 
             } else {

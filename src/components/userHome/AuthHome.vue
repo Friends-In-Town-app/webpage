@@ -72,7 +72,7 @@
 
 <!-- FAB -->
 <div class="fixed-action-btn" style="bottom: 45px; right: 45px;">
-  <a  href="#!" data-activates="slide-out" class="button-collapse btn-floating btn-large orange" v-on:click="showFriendsList">
+  <a data-activates="slide-out" class="button-collapse btn-floating btn-large orange" v-on:click="showFriendsList">
     <i class="material-icons">group</i>
   </a>
 </div>
@@ -124,6 +124,7 @@ export default {
   methods: {
     showFriendsList : function(event) {
       this.getFriendsList();
+      event.preventDefault();
     }, 
     getFriendsList : function(event){
       this.user_friends = [{ 

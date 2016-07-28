@@ -25,17 +25,17 @@ Vue.use(VueResource)
 
 // Routing
 var router = new VueRouter({
-	// history: true
+	//history: true
 })
 
 router.map({
   '/home': {
     component: AuthHome,
-    name: 'root'
+    name: 'home'
   },
   '/':{
   	component: UnAuthHome,
-    name: 'home'
+    name: 'root'
   },
   '/error':{
   	component: Error505,

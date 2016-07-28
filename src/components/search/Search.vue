@@ -10,17 +10,17 @@
     <div class="nav-wrapper">
      <ul id="nav-mobile" class="left hide-on-med-and-down">
         <li>
-          <a href="#">
+          <a href="#" v-link="{ path: 'home' }">
             <i class="material-icons left">location_on</i> Map
           </a>
         </li>
         <li>
-          <a href="#">
+          <a href="#" v-link="{ path: 'search' }">
           <i class="material-icons left">search</i> Search
           </a>
         </li>
         <li>
-          <a href="#">
+          <a href="#" v-link="{ path: 'notifications' }">
             <i class="material-icons left">stars</i> Notifications
           </a>
         </li>
@@ -68,7 +68,7 @@
             <td width="50%">{{searched_user.name}}</td>
             <td width="40%">{{searched_user.email}}</td>
             <td width="10%">
-              <a class="btn-floating btn waves-effect waves-light blue center">
+              <a class="btn-floating btn waves-effect waves-light blue center" v-on:click="addUser">
                 <i class="material-icons">add</i>
               </a>
             </td>
@@ -124,6 +124,7 @@ export default {
         });
     }, 
     addUser : function(event){
+      //*/requestfriendship/:token/:id
     }
   }
 };
