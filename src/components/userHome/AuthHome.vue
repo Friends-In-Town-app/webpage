@@ -79,10 +79,9 @@
 </template>
 
 <script>
-import Auth from '../../assets/js/mainjs.js'
 import {load, Marker, Map} from 'vue-google-maps'
 
-load(Auth.GOOGLEKEY, Auth.GOOGLEAPIVERSION);
+load(GOOGLEKEY, GOOGLEAPIVERSION);
 export default {
 	/**
    *
