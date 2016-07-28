@@ -71,8 +71,8 @@
 </ul>
 
 <!-- FAB -->
-<div class="fixed-action-btn" style="bottom: 45px; right: 30px;">
-  <a  href="#" data-activates="slide-out" class="button-collapse btn-floating btn-large orange" v-on:click="showFriendsList">
+<div class="fixed-action-btn" style="bottom: 45px; right: 45px;">
+  <a  href="#!" data-activates="slide-out" class="button-collapse btn-floating btn-large orange" v-on:click="showFriendsList">
     <i class="material-icons">group</i>
   </a>
 </div>

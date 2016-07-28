@@ -224,12 +224,17 @@
           + this.signin.email + '/' 
           + this.signin.password + '/webapp').then((response) => {
             // 200 RESPONSE
-            console.log("200 TIMEOUT");
             if(response.data.success){
               // Save user data
               this.user.token = response.data.user.token;
               this.user.name = response.data.user.n;
               this.user.pos = response.data.user.pos;
+
+              // Save in the local storage
+              localStorage.setItem('user_token', this.user.token);
+              localStorage.setItem('user_name', this.user.n);
+              localStorage.setItem('user_pos', this.user.pos);
+
               this.$route.router.go('/home');
 
             } else {
@@ -242,7 +247,6 @@
 
           }, (response) => {
           // Redirect to error message/page
-          console.log("!= 200 TIMEOUT: " + response);
           this.$route.router.go('/error');
         });
       },
