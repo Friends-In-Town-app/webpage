@@ -3,10 +3,10 @@
   "description": "WebApp for the Friends-in-town project",
   "author": "Heitor Guimarães <hguimaraes@poli.ufrj.br>",
   "scripts": {
-    "watchify": "watchify -vd -p browserify-hmr -e src/main.js -o public/dist/build.js",
-    "serve": "http-server -c 1 -a localhost",
+    "watchify": "watchify -vd -p browserify-hmr -e src/main.js -o dist/build.js",
+    "serve": "http-server -c 1",
     "dev": "npm-run-all --parallel watchify serve",
-    "build": "cross-env NODE_ENV=production browserify -e src/main.js | uglifyjs -c warnings=false -m > public/dist/build.js",
+    "build": "cross-env NODE_ENV=production browserify -e src/main.js | uglifyjs -c warnings=false -m > dist/build.js",
     "lint": "eslint --ext .js,.vue src test/unit",
     "test": "karma start karma.conf.js"
   },
@@ -49,6 +49,7 @@
     "phantomjs-prebuilt": "^2.1.3",
     "proxyquireify": "^3.0.1",
     "uglify-js": "^2.5.0",
+    "vue-hot-reload-api": "^1.3.3",
     "vueify": "^8.5.4",
     "watchify": "^3.4.0"
   }

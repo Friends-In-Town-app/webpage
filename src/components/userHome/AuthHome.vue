@@ -55,7 +55,7 @@
 <!-- Friends List -->
 <ul id="slide-out" class="side-nav">
   <li><div class="userView">
-    <img class="background" src="/assets/imgs/map_background.jpg">
+    <img class="background" src="src/assets/imgs/map_background.jpg">
     <a href="#!user"><img class="circle" v-bind="{src:user.profile_pic}"></a>
     <a href="#!name"><span class="fwhite-text name">{{user.name}}</span></a>
     <a href="#!email"><span class="white-text email">{{user.email}}</span></a>
@@ -79,10 +79,10 @@
 </template>
 
 <script>
-
+import Auth from '../../assets/js/mainjs.js'
 import {load, Marker, Map} from 'vue-google-maps'
 
-load(GOOGLEKEY, GOOGLEAPIVERSION);
+load(Auth.GOOGLEKEY, Auth.GOOGLEAPIVERSION);
 export default {
 	/**
    *
@@ -102,7 +102,7 @@ export default {
         user: {
           "name": "Heitor Guimarães",
           "email" : "hguimaraes.poli.ufrj",
-          "profile_pic":"/assets/imgs/hguimaraes.jpg",
+          "profile_pic":"src/assets/imgs/hguimaraes.jpg",
           "pos":""
         },
 
@@ -129,27 +129,27 @@ export default {
     getFriendsList : function(event){
       this.user_friends = [{ 
           "name": "John Snow",
-          "profile_pic":"/assets/imgs/hguimaraes.jpg",
+          "profile_pic":"src/assets/imgs/hguimaraes.jpg",
           "pos":""
         },
         { 
           "name": "Captain America",
-          "profile_pic":"/assets/imgs/hguimaraes.jpg",
+          "profile_pic":"src/assets/imgs/hguimaraes.jpg",
           "pos":""
         },
         { 
           "name": "Joker",
-          "profile_pic":"/assets/imgs/hguimaraes.jpg",
+          "profile_pic":"src/assets/imgs/hguimaraes.jpg",
           "pos":""
         },
         { 
           "name": "Batman",
-          "profile_pic":"/assets/imgs/hguimaraes.jpg",
+          "profile_pic":"src/assets/imgs/hguimaraes.jpg",
           "pos":""
         },
         { 
           "name": "Arlequin",
-          "profile_pic":"/assets/imgs/hguimaraes.jpg",
+          "profile_pic":"src/assets/imgs/hguimaraes.jpg",
           "pos":""
         }];
     }
