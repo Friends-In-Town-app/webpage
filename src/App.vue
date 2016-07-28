@@ -28,13 +28,16 @@ var router = new Router({
 
 router.map({
   '/': {
-    component: AuthHome
+    component: AuthHome,
+    name: 'root'
   },
   '/home':{
-  	component: AuthHome
+  	component: AuthHome,
+    name: 'home'
   },
   '/error':{
-  	component: Error505
+  	component: Error505,
+    name: 'error'
   }
 })
 

@@ -128,52 +128,28 @@ export default {
     }, 
     getFriendsList : function(event){
       this.user_friends = [{ 
-<<<<<<< HEAD
-          "name": "John Snow",
-          "profile_pic":"src/assets/imgs/hguimaraes.jpg",
-          "pos":""
-        },
-        { 
-          "name": "Captain America",
-          "profile_pic":"src/assets/imgs/hguimaraes.jpg",
-=======
           "name": "El Diablo",
-          "profile_pic":"/assets/imgs/eldiablo.jpg",
+          "profile_pic":"src/assets/imgs/eldiablo.jpg",
           "pos":""
         },
         { 
           "name": "DeadShot",
-          "profile_pic":"/assets/imgs/deadshot.jpg",
->>>>>>> 22e7576e7283bea99da0a94719b296e51cc1dbbd
+          "profile_pic":"src/assets/imgs/deadshot.jpg",
           "pos":""
         },
         { 
           "name": "Joker",
-<<<<<<< HEAD
-          "profile_pic":"src/assets/imgs/hguimaraes.jpg",
-          "pos":""
-        },
-        { 
-          "name": "Batman",
-          "profile_pic":"src/assets/imgs/hguimaraes.jpg",
-          "pos":""
-        },
-        { 
-          "name": "Arlequin",
-          "profile_pic":"src/assets/imgs/hguimaraes.jpg",
-=======
-          "profile_pic":"/assets/imgs/joker.jpg",
+          "profile_pic":"src/assets/imgs/joker.jpg",
           "pos":""
         },
         { 
           "name": "Bruce Wayne",
-          "profile_pic":"/assets/imgs/brucewayne.jpg",
+          "profile_pic":"src/assets/imgs/brucewayne.jpg",
           "pos":""
         },
         { 
           "name": "Harley Quinn",
-          "profile_pic":"/assets/imgs/harleyquinn.jpg",
->>>>>>> 22e7576e7283bea99da0a94719b296e51cc1dbbd
+          "profile_pic":"src/assets/imgs/harleyquinn.jpg",
           "pos":""
         }];
     }
