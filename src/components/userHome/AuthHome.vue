@@ -56,15 +56,15 @@
 <ul id="slide-out" class="side-nav">
   <li><div class="userView">
     <img class="background" src="/assets/imgs/map_background.jpg">
-    <a href="#!user"><img class="circle" v-bind="{src:user.profile_pic}"></a>
-    <a href="#!name"><span class="fwhite-text name">{{user.name}}</span></a>
-    <a href="#!email"><span class="white-text email">{{user.email}}</span></a>
+    <img class="circle" v-bind="{src:user.profile_pic}">
+    <span class="fwhite-text name">{{user.name}}</span>
+    <span class="white-text email">{{user.email}}</span>
   </div></li>
-  <li><a><i class="material-icons">group</i>Your Friends</a></li>
+  <li><i class="material-icons">group</i>Your Friends</li>
   <li><div class="divider"></div></li>
   <li v-for="friend in user_friends">
     <a class="waves-effect" href="#!">
-      <img class="circle" v-bind="{src:friend.profile_pic}">
+      <img style="vertical-align:middle" class="circle" v-bind="{src:friend.profile_pic}">
       <span class="fwhite-text name">{{friend.name}}</span>
     </a>
   </li>
@@ -128,28 +128,28 @@ export default {
     }, 
     getFriendsList : function(event){
       this.user_friends = [{ 
-          "name": "John Snow",
-          "profile_pic":"/assets/imgs/hguimaraes.jpg",
+          "name": "El Diablo",
+          "profile_pic":"/assets/imgs/eldiablo.jpg",
           "pos":""
         },
         { 
-          "name": "Captain America",
-          "profile_pic":"/assets/imgs/hguimaraes.jpg",
+          "name": "DeadShot",
+          "profile_pic":"/assets/imgs/deadshot.jpg",
           "pos":""
         },
         { 
           "name": "Joker",
-          "profile_pic":"/assets/imgs/hguimaraes.jpg",
+          "profile_pic":"/assets/imgs/joker.jpg",
           "pos":""
         },
         { 
-          "name": "Batman",
-          "profile_pic":"/assets/imgs/hguimaraes.jpg",
+          "name": "Bruce Wayne",
+          "profile_pic":"/assets/imgs/brucewayne.jpg",
           "pos":""
         },
         { 
-          "name": "Arlequin",
-          "profile_pic":"/assets/imgs/hguimaraes.jpg",
+          "name": "Harley Quinn",
+          "profile_pic":"/assets/imgs/harleyquinn.jpg",
           "pos":""
         }];
     }
